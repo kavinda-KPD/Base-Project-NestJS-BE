@@ -34,15 +34,15 @@ export class ApplicationStartupHook implements OnApplicationBootstrap {
     this.logger = new Logger(ApplicationStartupHook.name);
   }
 
-  onApplicationBootstrap() {
+  async onApplicationBootstrap() {
     // populate the database with roles on application startup
-    this.populateSystemRoles();
+    await this.populateSystemRoles();
 
     // populate admin role
-    this.populateAdminRole();
+    await this.populateAdminRole();
 
     // populate the image folder if not exists
-    this.createImageFolderIfNotExist();
+    await this.createImageFolderIfNotExist();
   }
 
   private async populateSystemRoles() {
