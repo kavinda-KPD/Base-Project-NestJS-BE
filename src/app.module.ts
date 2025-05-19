@@ -12,6 +12,7 @@ import { ApplicationStartupHook } from './infrastructure/services/application-st
 import { UseCaseModule } from './application/use-case.module';
 import { AuthModule } from './infrastructure/auth-module/auth.module';
 import { RequestLoggerMiddleware } from './infrastructure/common/middlewares/request-response.middlewear';
+import { FilesController } from './infrastructure/services/image-upload/image.controller';
 @Module({
   imports: [
     ConfigurationModule,
@@ -19,7 +20,7 @@ import { RequestLoggerMiddleware } from './infrastructure/common/middlewares/req
     TypeOrmConfigModule,
     AuthModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, FilesController],
   providers: [AppService, ApplicationStartupHook],
 })
 export class AppModule {

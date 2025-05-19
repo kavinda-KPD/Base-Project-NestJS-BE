@@ -1,5 +1,4 @@
 import { RoleModel } from './role.model';
-import { TeamModel } from './team.model';
 
 export class UserModel {
   id: string;
@@ -9,6 +8,4 @@ export class UserModel {
   password: string;
 
   role: Partial<RoleModel>;
-
-  team?: Partial<TeamModel>;
 }
